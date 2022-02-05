@@ -36,6 +36,16 @@ function picnicBudget(members){
     }
 }
 
+// get odd friend name
+function oddFriend(friends){
+    for (let friend in friends){ 
+        if(friends[friend].length % 2 !== 0){
+            return friends[friend];
+        }
+    }
+
+}
+
 const vori = anaToVori(20);
 console.log(vori);
 
@@ -44,3 +54,6 @@ console.log(totalCost);
 
 const picnicCost = picnicBudget(210);
 console.log(picnicCost);
+
+const result = oddFriend(["jewe", "shah", "bapi", "shoyaib"]);
+console.log(result)
