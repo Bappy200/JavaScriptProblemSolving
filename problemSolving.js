@@ -1,11 +1,17 @@
 // ana to vori convarter
 function anaToVori(ana){
+    if(typeof ana !== "number"){
+        return "Please give number";
+    }
     const vori = ana * 0.0625;
     return vori;
 }
 
 //pandaCost calculation
 function pandaCost(singara, chamucha, jilapi){
+    if(!Number.isInteger(singara) || !Number.isInteger(chamucha) || !Number.isInteger(jilapi)){
+        return "Please give number";
+    }
     const singaraCost = singara * 7;
     const chamuchaCost = chamucha * 10;
     const jilapiCost = jilapi * 15;
@@ -16,7 +22,10 @@ function pandaCost(singara, chamucha, jilapi){
 
 // picnic budget calculation 
 function picnicBudget(members){
-    if(members <= 100){
+    if(!Number.isInteger(members)){
+        return "Please give number";
+    }
+    else if(members <= 100){
         return members * 5000;
     }
     else if(members <= 200){
@@ -38,6 +47,9 @@ function picnicBudget(members){
 
 // get odd friend name
 function oddFriend(friends){
+    if(!Array.isArray(friends)){
+        return "You should give a array for input";
+    }
     for (let friend in friends){ 
         if(friends[friend].length % 2 !== 0){
             return friends[friend];
@@ -46,14 +58,14 @@ function oddFriend(friends){
 
 }
 
-const vori = anaToVori(20);
+const vori = anaToVori(20.2);
 console.log(vori);
 
-const totalCost = pandaCost(3, 2, 2);
+const totalCost = pandaCost(3, 2, 4);
 console.log(totalCost);
 
-const picnicCost = picnicBudget(210);
+const picnicCost = picnicBudget(230);
 console.log(picnicCost);
 
-const result = oddFriend(["jewe", "shah", "bapi", "shoyaib"]);
+const result = oddFriend(["jewel","dsfs","sdf"]);
 console.log(result)
